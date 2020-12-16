@@ -1,0 +1,22 @@
+server:
+  applicationContextPath: /fkms
+  applicationConnectors:
+    - type: http
+      port: 8085
+database:
+  driverClass: com.mysql.cj.jdbc.Driver
+  user: root
+  password: admin123*
+  url: jdbc:mysql://localhost:3306/dropwizarddemo
+
+  properties:
+    hibernate.dialect: org.hibernate.dialect.MySQLDialect
+    hibernate.hbm2ddl.auto: update
+    hibernate.ddl-auto: update
+    hibernate.show_sql: true
+
+  maxWaitForConnection: 1s
+  validationQuery: "/* MyApplication Health Check */ SELECT 1"
+  minSize: 8
+  maxSize: 32
+  checkConnectionWhileIdle: false
